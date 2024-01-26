@@ -1,7 +1,16 @@
+<script setup>
+import { useAuthStore } from '@/stores/modules/auth';
+
+const useAuth = useAuthStore();
+</script>
+
 <template>
     <section class="bg-gray-50 dark:bg-gray-900">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-            <v-router-link to="/" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+            <v-router-link
+                to="/"
+                class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
+            >
                 <img src="../../assets/images/logo.svg" />
             </v-router-link>
 
@@ -15,16 +24,27 @@
                     <!-- Login Form -->
                     <vee-form v-slot="{ meta, errors, handleSubmit }">
                         <form
-                            @submit.prevent="handleSubmit($event, login)"
+                            @submit.prevent="handleSubmit($event, useAuth.login)"
                             class="space-y-4 md:space-y-6"
                         >
-                            <v-input type="hidden" name="device_name" id="device_name" value="chrome" rules="required" />
+                            <v-input
+                                type="hidden"
+                                name="device_name"
+                                id="device_name"
+                                value="chrome"
+                                rules="required"
+                            />
 
                             <div>
                                 <v-label for="email">Your Email</v-label>
 
-                                <v-input type="text" name="email" id="email" rules="required"
-                                    placeholder="Enter your email address" />
+                                <v-input
+                                    type="text"
+                                    name="email"
+                                    id="email"
+                                    rules="required"
+                                    placeholder="Enter your email address"
+                                />
 
                                 <v-error control-name="email" />
                             </div>
@@ -32,8 +52,13 @@
                             <div>
                                 <v-label for="password">Password</v-label>
 
-                                <v-input type="password" name="password" id="password" rules="required"
-                                    placeholder="••••••••" />
+                                <v-input
+                                    type="password"
+                                    name="password"
+                                    id="password"
+                                    rules="required"
+                                    placeholder="••••••••"
+                                />
 
                                 <v-error control-name="password" />
                             </div>
@@ -41,7 +66,11 @@
                             <div class="flex items-center justify-between">
                                 <div class="flex items-start">
                                     <div class="flex items-center h-5">
-                                        <v-input type="checkbox" id="remember" aria-describedby="remember" />
+                                        <v-input
+                                            type="checkbox"
+                                            id="remember"
+                                            aria-describedby="remember"
+                                        />
                                     </div>
 
                                     <div class="ml-3 text-sm">
@@ -49,8 +78,10 @@
                                     </div>
                                 </div>
 
-                                <v-router-link to="#"
-                                    class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">
+                                <v-router-link
+                                    to="#"
+                                    class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
+                                >
                                     Forgot password?
                                 </v-router-link>
                             </div>
@@ -63,8 +94,10 @@
                             <!-- Sign in button link -->
                             <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                                 Don't have an account yet?
-                                <v-router-link to="/register"
-                                    class="font-medium text-primary-600 hover:underline dark:text-primary-500">
+                                <v-router-link
+                                    to="/register"
+                                    class="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                                >
                                     Sign up
                                 </v-router-link>
                             </p>
@@ -75,27 +108,3 @@
         </div>
     </section>
 </template>
-
-<script>
-export default {
-    name: "Login",
-
-    data() {
-        return {};
-    },
-
-    methods: {
-        login(params) {
-            this.$axios.post('customer/login', params)
-                .then((res) => {
-                    console.log(res);
-                    // if (res.status == 200) {
-                    //     this.$router.push('/');
-                    // }
-                }).catch((error) => {
-                    console.log(error);
-                })
-        }
-    }
-}
-</script>

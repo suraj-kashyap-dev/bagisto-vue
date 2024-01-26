@@ -1,29 +1,33 @@
 import './assets/main.css'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+import App from './App.vue';
+import router from './router';
+import { useAuthStore } from '@/stores/modules/auth';
+import AxiosPlugin from './plugins/axios';
+import VeeValidatePlugin from './plugins/vee-validate';
+import ControlsPlugin from './plugins/controls';
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+// Create the Vue app
+const app = createApp(App);
 
-import App from './App.vue'
-import router from './router'
+// Create Pinia instance
+const pinia = createPinia();
+app.use(pinia);
 
-const app = createApp(App)
+// Inject $axios into Pinia store
+pinia.use(({ store }) => {
+    store.$axios = app.config.globalProperties.$axios;
+});
 
-app.use(createPinia())
-app.use(router)
+// Use the router and other global plugins
+app.use(router);
+app.use(AxiosPlugin);
+app.use(VeeValidatePlugin);
+app.use(ControlsPlugin);
 
+// Set the app instance globally
+app.config.globalProperties.$app = app;
 
-/**
- * Global plugins registration.
- */
-import Axios from "./plugins/axios";
-import VeeValidate from "./plugins/vee-validate";
-import Controls from "./plugins/controls";
-
-[
-    Axios,
-    Controls,
-    VeeValidate,
-].forEach((plugin) => app.use(plugin));
-
-
-app.mount('#app')
+// Mount the app to the DOM
+app.mount('#app');

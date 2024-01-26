@@ -1,8 +1,9 @@
-import './assets/main.css'
-import { createApp } from 'vue';
-import { createPinia } from 'pinia';
-import App from './App.vue';
-import router from './router';
+import "./assets/main.css";
+import { createApp } from "vue";
+import { createPinia } from "pinia";
+import { RouterLink } from "vue-router";
+import App from "./App.vue";
+import router from "./router";
 
 // Create the Vue app
 const app = createApp(App);
@@ -13,18 +14,21 @@ app.use(pinia);
 
 // Inject $axios into Pinia store
 pinia.use(({ store }) => {
-    store.$axios = app.config.globalProperties.$axios;
+  store.$axios = app.config.globalProperties.$axios;
 });
 
 // Use the router and other global plugins
-import AxiosPlugin from './plugins/axios';
-import VeeValidatePlugin from './plugins/vee-validate';
-import ControlsPlugin from './plugins/controls';
+import AxiosPlugin from "./plugins/axios";
+import VeeValidatePlugin from "./plugins/vee-validate";
+import ControlsPlugin from "./plugins/controls";
 
 app.use(router);
 app.use(AxiosPlugin);
 app.use(VeeValidatePlugin);
 app.use(ControlsPlugin);
 
+// Register global router link
+app.component("v-router-link", RouterLink);
+
 // Mount the app to the DOM
-app.mount('#app');
+app.mount("#app");

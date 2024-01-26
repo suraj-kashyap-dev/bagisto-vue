@@ -1,28 +1,28 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue';
-import Register from '../views/Customer/Register.vue';
-import Login from '../views/Customer/Login.vue';
+import { createRouter, createWebHistory } from "vue-router";
+import Home from "../views/Home.vue";
+import Register from "../views/Customer/Register.vue";
+import Login from "../views/Customer/Login.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
 
   routes: [
     {
-      path: '/',
-      name: 'rome',
+      path: "/",
+      name: "rome",
       component: Home,
     },
     {
-      path: '/register',
-      name: 'register',
-      component: Register
+      path: "/customer/register",
+      name: "register",
+      component: Register,
     },
     {
-      path: '/login',
-      name: 'login',
-      component: Login
+      path: "/customer/login",
+      name: "login",
+      component: Login,
     },
-  ]
-})
+  ],
+});
 
-export default router
+export default router;

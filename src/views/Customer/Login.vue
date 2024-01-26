@@ -1,7 +1,7 @@
 <script setup>
 import { useAuthStore } from '@/stores/modules/auth';
 
-const useAuth = useAuthStore();
+const userStore = useAuthStore();
 </script>
 
 <template>
@@ -14,6 +14,10 @@ const useAuth = useAuthStore();
                 <img src="../../assets/images/logo.svg" />
             </v-router-link>
 
+            <template if="userStore.isAuthenticated">
+                name : {{  userStore.user  }}
+            </template>
+
             <div
                 class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
                 <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -24,7 +28,7 @@ const useAuth = useAuthStore();
                     <!-- Login Form -->
                     <vee-form v-slot="{ meta, errors, handleSubmit }">
                         <form
-                            @submit.prevent="handleSubmit($event, useAuth.login)"
+                            @submit.prevent="handleSubmit($event, userStore.login)"
                             class="space-y-4 md:space-y-6"
                         >
                             <v-input

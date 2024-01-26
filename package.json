@@ -12,10 +12,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "axios": "^1.6.7",
-    "pinia": "^2.1.7",
     "@vee-validate/i18n": "^4.9.1",
     "@vee-validate/rules": "^4.9.1",
+    "axios": "^1.6.7",
+    "pinia": "^2.1.7",
+    "swiper": "^11.0.5",
     "vee-validate": "^4.12.4",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"

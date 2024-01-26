@@ -33,6 +33,7 @@ import {
 import { Swiper, SwiperSlide } from "swiper/vue";
 
 export default {
+  name: "VCarousels",
   components: {
     Swiper,
     SwiperSlide,

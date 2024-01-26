@@ -8,7 +8,7 @@ import Carousel from "./components/Carousels/Index.vue";
 <template>
   <TopHeader />
   <BottomHeader />
-  <!-- //  <Carousel /> -->
+  <Carousel />
 
   <RouterView></RouterView>
 </template>

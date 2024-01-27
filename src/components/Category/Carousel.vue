@@ -12,8 +12,8 @@
           class="grid grid-cols-1 gap-4 justify-items-center min-w-[120px] max-w-[120px] font-medium"
           v-for="category in categories"
         >
-          <a
-            :href="category.slug"
+          <v-router-link
+            :to="category.slug"
             class="w-[110px] h-[110px] bg-[#F5F5F5] rounded-full"
             :aria-label="category.name"
           >
@@ -26,7 +26,7 @@
                 :alt="category.name"
               />
             </template>
-          </a>
+          </v-router-link>
 
           <a :href="category.slug" class="">
             <p
@@ -40,7 +40,7 @@
       <span
         class="flex items-center justify-center absolute top-9 -left-10 w-[50px] h-[50px] bg-white border border-black rounded-full transition icon-arrow-left-stylish text-2xl hover:text-white max-lg:-left-7 cursor-pointer"
         role="button"
-        aria-label="@lang('shop::components.carousel.previous')"
+        aria-label="Previous"
         tabindex="0"
         @click="swipeLeft"
       >
@@ -64,7 +64,7 @@
       <span
         class="flex items-center justify-center absolute top-9 -right-6 w-[50px] h-[50px] bg-white border border-black rounded-full transition icon-arrow-right-stylish text-2xl hover:text-white max-lg:-right-7 cursor-pointer"
         role="button"
-        aria-label="@lang('shop::components.carousel.next')"
+        aria-label="Next"
         tabindex="0"
         @click="swipeRight"
       >

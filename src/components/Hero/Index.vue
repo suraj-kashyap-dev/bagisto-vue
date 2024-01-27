@@ -56,7 +56,9 @@
   </swiper>
 </template>
 
-<script>
+<script setup>
+import { ref } from "vue";
+import { useHeroStore } from '@/stores/modules/hero';
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
@@ -64,74 +66,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  data() {
-    return {
-      modules: [Pagination, Navigation, Autoplay],
-      items: [
-        {
-          title: "Get Ready for new collections",
-          description:
-            "From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.",
-          btnTitle: "View All",
-          link: "",
-          image: {
-            src: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png",
-            alt: "Demo",
-          },
-        },
-        {
-          title: "Get Ready for new collections",
-          description:
-            "From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.",
-          btnTitle: "View All",
-          link: "",
-          image: {
-            src: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png",
-            alt: "Demo",
-          },
-        },
-        {
-          title: "Get Ready for new collections",
-          description:
-            "From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.",
-          btnTitle: "View All",
-          link: "",
-          image: {
-            src: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png",
-            alt: "Demo",
-          },
-        },
-        {
-          title: "Get Ready for new collections",
-          description:
-            "From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.",
-          btnTitle: "View All",
-          link: "",
-          image: {
-            src: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png",
-            alt: "Demo",
-          },
-        },
-        {
-          title: "Get Ready for new collections",
-          description:
-            "From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.",
-          btnTitle: "View All",
-          link: "",
-          image: {
-            src: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png",
-            alt: "Demo",
-          },
-        },
-      ],
-    };
-  },
-};
+const modules = ref([Pagination, Navigation, Autoplay]);
+const items = useHeroStore().items;
 </script>
 
 <style>

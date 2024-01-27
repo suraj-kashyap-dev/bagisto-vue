@@ -7,11 +7,12 @@ export const useCategoriesStore = defineStore("categories", {
 
   actions: {
     getCategories() {
-        this.$axios.get('categories')
+      this.$axios
+        .get("categories")
         .then((response) => {
-          this.categories= response.data.data;
+          this.categories = response.data.data;
         })
-        .catch(error => console.log(error));
+        .catch((error) => console.log(error));
     },
   },
 });

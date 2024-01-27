@@ -1,7 +1,8 @@
 <script>
 import { RouterView } from "vue-router";
-import BottomHeader from "./components/Header/Bottom.vue";
-import TopHeader from "./components/Header/Top.vue";
+import BottomHeader from "./views/Partials/BottomHeader.vue";
+import TopHeader from "./views/Partials/TopHeader.vue";
+import Footer from "./views/Partials/Footer.vue";
 
 import {
   initAccordions,
@@ -24,15 +25,16 @@ export default {
   components: {
     TopHeader,
     BottomHeader,
+    Footer,
   },
 
   created() {
     this.$Progress.start();
-  
+
     this.$router.beforeEach((to, from, next) => {
       if (to.meta.progress !== undefined) {
         let meta = to.meta.progress;
-  
+
         this.$Progress.parseMeta(meta);
       }
 
@@ -58,18 +60,19 @@ export default {
     initPopovers();
     initTabs();
     initTooltips();
-  }
-}
+  },
+};
 </script>
 
 <template>
+
   <TopHeader />
   <BottomHeader />
 
   <RouterView></RouterView>
+  <Footer />
   <vue-progress-bar></vue-progress-bar>
 </template>
-
 
 <style>
 #nav {

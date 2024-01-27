@@ -66,8 +66,8 @@ const router = createRouter({
       },
     },
     {
-      path: '/:slug',
-      name: 'category.details',
+      path: "/:slug",
+      name: "category.details",
       component: CategoryView,
       meta: {
         progress: {

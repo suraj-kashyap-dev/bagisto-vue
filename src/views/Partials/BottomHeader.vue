@@ -19,18 +19,26 @@ onMounted(() => {
         to="/"
         class="flex items-center space-x-3 rtl:space-x-reverse"
       >
-        <img alt="logo" class="mr-2" src="../../assets/images/logo.svg" />
+        <img
+          src="https://flowbite.com/docs/images/logo.svg"
+          class="h-8"
+          alt="Flowbite Logo"
+        />
+        <span
+          class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+          >Bagisto</span
+        >
       </v-router-link>
 
       <div
         class="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse"
       >
         <img
-          v-if="authStore.isAuthenticated" 
+          v-if="authStore.isAuthenticated"
           class="w-10 h-10 rounded-full"
           src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
           alt="Rounded avatar"
-        >
+        />
 
         <div v-else>
           <v-router-link
@@ -47,7 +55,7 @@ onMounted(() => {
             Sign up
           </v-router-link>
         </div>
-        
+
         <button
           data-collapse-toggle="mega-menu"
           type="button"
@@ -215,7 +223,10 @@ onMounted(() => {
           </li> -->
           <li v-for="category in categoriesStore.categories">
             <v-router-link
-              :to="{ name: 'category.details', params: { slug: category.slug } }"
+              :to="{
+                name: 'category.details',
+                params: { slug: category.slug },
+              }"
               class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700"
             >
               {{ category.name }}

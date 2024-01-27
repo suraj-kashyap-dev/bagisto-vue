@@ -21,7 +21,6 @@ const options = {
   inverse: false,
 };
 
-
 // Create the Vue app
 const app = createApp(App);
 
@@ -43,7 +42,6 @@ app.use(router);
 app.use(AxiosPlugin);
 app.use(VeeValidatePlugin);
 app.use(ControlsPlugin);
-
 
 app.use(VueProgressBar, options);
 

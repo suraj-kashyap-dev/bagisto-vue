@@ -6,7 +6,7 @@ const axiosConfig = axios.create({
 
 export default {
   install(app) {
-    app.config.globalProperties.$axios = axiosConfig
+    app.config.globalProperties.$axios = axiosConfig;
 
     window.axios = axiosConfig;
   },

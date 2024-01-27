@@ -1,0 +1,3 @@
+<template>
+    Category page
+</template>

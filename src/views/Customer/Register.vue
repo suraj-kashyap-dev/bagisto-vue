@@ -7,7 +7,7 @@
         to="/"
         class="flex items-center mb-6 mt-10 text-2xl font-semibold text-gray-900 dark:text-white"
       >
-        <img src="../../assets/images/logo.svg" />
+        <img alt="logo" class="mr-2" src="../../assets/images/logo.svg" />
       </v-router-link>
 
       <div
@@ -17,7 +17,7 @@
           <h1
             class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
           >
-            Register in to your account
+            Create and account
           </h1>
 
           <!-- Register Form -->

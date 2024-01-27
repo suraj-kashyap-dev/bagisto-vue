@@ -1,3 +1,3 @@
 <script setup></script>
 
-<template>Home Page</template>
+<template></template>

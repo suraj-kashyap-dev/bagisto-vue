@@ -1,12 +1,13 @@
 import axios from "axios";
-window.axios = axios;
 
-window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+const axiosConfig = axios.create({
+  baseURL: "http://localhost/bagisto/public/api/v1/",
+});
 
 export default {
   install(app) {
-    app.config.globalProperties.$axios = axios.create({
-      baseURL: "http://localhost/bagisto/public/api/v1/",
-    });
+    app.config.globalProperties.$axios = axiosConfig
+
+    window.axios = axiosConfig;
   },
 };

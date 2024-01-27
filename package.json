@@ -12,9 +12,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@aacassandra/vue3-progressbar": "^1.0.3",
     "@vee-validate/i18n": "^4.9.1",
     "@vee-validate/rules": "^4.9.1",
     "axios": "^1.6.7",
+    "flowbite": "^2.2.1",
     "pinia": "^2.1.7",
     "swiper": "^11.0.5",
     "vee-validate": "^4.12.4",

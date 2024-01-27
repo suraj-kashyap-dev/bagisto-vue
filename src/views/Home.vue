@@ -36,8 +36,8 @@ const products = [
 <template>
   <Hero />
   <section class="bg-white dark:bg-gray-900">
-    <div class="px-[100px]">
-      <GalleryOne />
+    <div class="lg:px-[100px]">
+      <!-- <GalleryOne /> -->
       <GalleryTwo />
 
       <ProductCarousel

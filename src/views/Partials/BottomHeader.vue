@@ -21,6 +21,7 @@ onMounted(() => {
         class="flex items-center space-x-3 rtl:space-x-reverse"
       >
         <img
+          loading="lazy"
           src="https://flowbite.com/docs/images/logo.svg"
           class="h-8"
           alt="Flowbite Logo"
@@ -35,6 +36,7 @@ onMounted(() => {
         class="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse"
       >
         <img
+          loading="lazy"
           v-if="authStore.isAuthenticated"
           class="w-10 h-10 rounded-full"
           src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"

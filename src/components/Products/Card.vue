@@ -5,6 +5,7 @@
     >
       <v-router-link to="#" :aria-label="product.name">
         <img
+          loading="lazy"
           class="relative after:content-[' '] after:block after:pb-[calc(100%+9px)] bg-[#F5F5F5] group-hover:scale-105 transition-all duration-300"
           :src="product.base_image.medium_image_url"
           :key="product.id"

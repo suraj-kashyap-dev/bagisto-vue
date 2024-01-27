@@ -7,7 +7,12 @@
         to="/"
         class="flex items-center mb-6 mt-10 text-2xl font-semibold text-gray-900 dark:text-white"
       >
-        <img alt="logo" class="mr-2" src="../../assets/images/logo.svg" />
+        <img
+          loading="lazy"
+          alt="logo"
+          class="mr-2"
+          src="../../assets/images/logo.svg"
+        />
       </v-router-link>
 
       <div

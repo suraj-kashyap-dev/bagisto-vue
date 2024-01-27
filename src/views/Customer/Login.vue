@@ -13,7 +13,7 @@ const userStore = useAuthStore();
         to="/"
         class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
       >
-        <img src="../../assets/images/logo.svg" />
+        <img loading="lazy" src="../../assets/images/logo.svg" />
       </v-router-link>
 
       <template if="userStore.isAuthenticated">

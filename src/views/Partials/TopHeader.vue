@@ -36,6 +36,7 @@
           tabindex="0"
         >
           <img
+            loading="lazy"
             src="http://localhost:8000/storage/locales/JEeydVTlnUWymXRABHHVEwyiJakVkfpbo7RDOucG.png"
             class="h-full"
             alt="Default locale"
@@ -55,6 +56,7 @@
             <span
               class="flex items-center gap-2.5 px-5 py-2 text-base cursor-pointer hover:bg-gray-100 bg-gray-100"
               ><img
+                loading="lazy"
                 src="http://localhost:8000/storage/locales/JEeydVTlnUWymXRABHHVEwyiJakVkfpbo7RDOucG.png"
                 width="24"
                 height="16"

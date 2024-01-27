@@ -48,7 +48,7 @@
             </a>
           </div>
           <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-            <img :src="item.image.src" :alt="item.image.alt" />
+            <img loading="lazy" :src="item.image.src" :alt="item.image.alt" />
           </div>
         </div>
       </section>

@@ -65,7 +65,6 @@ export default {
 </script>
 
 <template>
-
   <TopHeader />
   <BottomHeader />
 

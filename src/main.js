@@ -4,7 +4,7 @@ import { createPinia } from "pinia";
 import { RouterLink } from "vue-router";
 import App from "./App.vue";
 import router from "./router";
-
+import Shimmer from "vue3-shimmer";
 import VueProgressBar from "@aacassandra/vue3-progressbar";
 
 const options = {
@@ -41,6 +41,8 @@ import ControlsPlugin from "./plugins/controls";
 app.use(router);
 app.use(AxiosPlugin);
 app.use(VeeValidatePlugin);
+app.use(Shimmer);
+
 app.use(ControlsPlugin);
 
 app.use(VueProgressBar, options);

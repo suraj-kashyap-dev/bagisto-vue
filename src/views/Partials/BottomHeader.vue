@@ -1,4 +1,5 @@
 <script setup>
+import { FreeStyleShimmer } from "vue3-shimmer";
 import { onMounted } from "vue";
 import { useAuthStore } from "@/stores/modules/auth";
 import { useCategoriesStore } from "@/stores/modules/categories";
@@ -221,6 +222,14 @@ onMounted(() => {
               </div>
             </div>
           </li> -->
+          <free-style-shimmer
+            v-for="index in 4"
+            :is-loading="!categoriesStore.categories.length"
+            height="20px"
+            width="80px"
+            color="#bdbdbd"
+          />
+
           <li v-for="category in categoriesStore.categories">
             <v-router-link
               :to="{

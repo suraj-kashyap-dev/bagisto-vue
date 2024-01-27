@@ -1,8 +1,8 @@
 <template>
-  <div
-    class="container mt-20 max-lg:px-8 max-sm:mt-8"
-    v-if="!isLoading && products.length"
-  >
+  <div v-if="isLoading">
+    <CarouselShimmer />
+  </div>
+  <div v-else class="container mt-20 max-lg:px-8 max-sm:mt-8">
     <div class="flex justify-between">
       <h2 class="text-3xl font-dmserif max-sm:text-2xl" v-text="title"></h2>
 
@@ -72,10 +72,12 @@
 
 <script>
 import ProductCard from "@/components/Products/Card.vue";
+import CarouselShimmer from "@/components/Products/Shimmer/CarouselShimmer.vue";
+
 export default {
   name: "ProductCarousel",
-  props: ['title'],
-  
+  props: ["title", "filters"],
+
   data() {
     return {
       isLoading: true,
@@ -88,6 +90,7 @@ export default {
 
   components: {
     ProductCard,
+    CarouselShimmer,
   },
 
   mounted() {
@@ -97,7 +100,9 @@ export default {
   methods: {
     getProducts() {
       this.$axios
-        .get("products?sort=asc&limit=10")
+        .get("products", {
+          params: this.filters,
+        })
         .then((response) => {
           this.isLoading = false;
 

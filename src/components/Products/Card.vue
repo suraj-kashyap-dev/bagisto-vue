@@ -3,7 +3,7 @@
     <div
       class="relative overflow-hidden group max-w-[291px] max-h-[300px] rounded"
     >
-      <a :aria-label="product.name + ' '">
+      <v-router-link to="#" :aria-label="product.name">
         <img
           class="relative after:content-[' '] after:block after:pb-[calc(100%+9px)] bg-[#F5F5F5] group-hover:scale-105 transition-all duration-300"
           :src="product.base_image.medium_image_url"
@@ -13,7 +13,7 @@
           height="300"
           :alt="product.name"
         />
-      </a>
+      </v-router-link>
       <div class="action-items bg-black">
         <p
           class="inline-block absolute top-5 ltr:left-5 rtl:right-5 px-2.5 bg-[#E51A1A] rounded-[44px] text-white text-sm"
@@ -49,7 +49,7 @@
 
       <div
         class="flex gap-2.5 items-center font-semibold text-lg"
-        v-html="product.price_html"
+        v-html="product.formatted_price"
       ></div>
 
       <!-- Needs to implement that in future -->
@@ -65,9 +65,9 @@
     </div>
   </div>
 </template>
-\
 
-<script type="module">
+<script>
+import { FreeStyleShimmer } from "vue3-shimmer";
 export default {
   props: ["mode", "product"],
 

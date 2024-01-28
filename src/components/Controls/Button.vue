@@ -1,5 +1,6 @@
 <script setup>
 import { useButtonStore } from "@/stores/modules/button";
+
 const isDisabled = useButtonStore();
 </script>
 

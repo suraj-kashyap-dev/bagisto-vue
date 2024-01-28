@@ -53,7 +53,6 @@ const userStore = useAuthStore();
                   id="email"
                   rules="required"
                   placeholder="Enter your email address"
-                  value="admin@gmail.com"
                 />
 
                 <v-error control-name="email" />
@@ -68,7 +67,6 @@ const userStore = useAuthStore();
                   id="password"
                   rules="required"
                   placeholder="••••••••"
-                  value="admin123"
                 />
 
                 <v-error control-name="password" />

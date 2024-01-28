@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosConfig = axios.create({
-  baseURL: "http://localhost/bagisto/public/api/v1/",
+  baseURL: import.meta.env.VITE_BASE_URL_PATH,
 });
 
 export default {

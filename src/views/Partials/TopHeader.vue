@@ -26,7 +26,7 @@
     </div>
     <p class="text-xs font-medium">
       Get UPTO 40% OFF on your 1st order
-      <a href="http://localhost:8000" class="underline">SHOP NOW</a>
+      <v-router-link to="/" class="underline">SHOP NOW</v-router-link>
     </p>
     <div class="relative">
       <div class="select-none">
@@ -37,7 +37,7 @@
         >
           <img
             loading="lazy"
-            src="http://localhost:8000/storage/locales/JEeydVTlnUWymXRABHHVEwyiJakVkfpbo7RDOucG.png"
+            src="../../assets/images/locale.png"
             class="h-full"
             alt="Default locale"
             width="24"

@@ -102,7 +102,7 @@ const userStore = useAuthStore();
               <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                 Don't have an account yet?
                 <v-router-link
-                  to="/register"
+                  to="/customer/register"
                   class="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Sign up

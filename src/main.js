@@ -1,5 +1,5 @@
 import "./assets/main.css";
-import { createApp } from "vue";
+import { createApp, markRaw } from "vue";
 import { createPinia } from "pinia";
 import { RouterLink } from "vue-router";
 import App from "./App.vue";
@@ -31,6 +31,7 @@ app.use(pinia);
 // Inject $axios into Pinia store
 pinia.use(({ store }) => {
   store.$axios = app.config.globalProperties.$axios;
+  store.$router = markRaw(router);
 });
 
 // Use the router and other global plugins

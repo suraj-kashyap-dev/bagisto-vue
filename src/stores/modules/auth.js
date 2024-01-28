@@ -25,6 +25,8 @@ export const useAuthStore = defineStore("auth", {
           localStorage.setItem("token", response.data.token);
 
           localStorage.setItem("isAuthenticated", true);
+
+          this.$router.push("/");
         })
         .catch((error) => {
           console.log(error);

@@ -58,7 +58,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { useHeroStore } from '@/stores/modules/hero';
+import { useHeroStore } from "@/stores/modules/hero";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 

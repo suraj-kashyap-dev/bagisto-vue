@@ -70,7 +70,7 @@ export default {
 
   <RouterView></RouterView>
   <Footer />
-  <vue-progress-bar></vue-progress-bar>
+  <vue-progress-bar />
 </template>
 
 <style>

@@ -88,35 +88,26 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { useCategoriesStore } from "@/stores/modules/categories";
-export default {
-  name: "Category",
+import { ref, computed } from 'vue';
 
-  data() {
-    return {
-      offset: 323,
-    };
-  },
+const offset = ref(323);
+const swiperContainer = ref(null);
 
-  computed: {
-    categories() {
-      return useCategoriesStore().categories;
-    },
-  },
+const categories = computed(() => {
+  return useCategoriesStore().categories;
+});
 
-  methods: {
-    swipeLeft() {
-      const container = this.$refs.swiperContainer;
+function swipeLeft() {
+  const container = swiperContainer.value;
 
-      container.scrollLeft -= this.offset;
-    },
+  container.scrollLeft -= offset.value;
+}
 
-    swipeRight() {
-      const container = this.$refs.swiperContainer;
+function swipeRight() {
+  const container = swiperContainer.value;
 
-      container.scrollLeft += this.offset;
-    },
-  },
-};
+  container.scrollLeft += offset.value;
+}
 </script>

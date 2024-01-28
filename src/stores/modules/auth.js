@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { useButtonStore } from "./button";
 
 export const useAuthStore = defineStore("auth", {
   state: () => ({
@@ -12,7 +13,9 @@ export const useAuthStore = defineStore("auth", {
   }),
 
   actions: {
-    login(params) {
+    login(params, { setErrors }) {
+      useButtonStore().setState(true);
+
       this.$axios
         .post("customer/login", params)
         .then((response) => {
@@ -29,7 +32,11 @@ export const useAuthStore = defineStore("auth", {
           this.$router.push("/");
         })
         .catch((error) => {
-          console.log(error);
+          if (error.response.status == 422) {
+            setErrors(error.response.data.errors);
+
+            useButtonStore().setState(false);
+          }
         });
     },
 

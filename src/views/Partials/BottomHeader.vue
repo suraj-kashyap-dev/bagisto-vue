@@ -204,9 +204,9 @@ onMounted(() => {
         </div>
 
         <div v-else>
-          <v-router-link
-            :to="{ name: 'login' }"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          <v-button
+            @click="$router.push('/customer/login')"
+            class="text-white bg-blue- hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
           >
             Sign in
             <svg
@@ -224,7 +224,7 @@ onMounted(() => {
                 d="M1 5h12m0 0L9 1m4 4L9 9"
               ></path>
             </svg>
-          </v-router-link>
+          </v-button>
         </div>
 
         <button

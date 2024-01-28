@@ -131,7 +131,7 @@
               </div>
 
               <!-- Register Button -->
-              <v-button type="submit"> Register </v-button>
+              <v-button type="submit" class="w-full"> Register </v-button>
 
               <!-- Sign up button link -->
               <p class="text-sm font-light text-gray-500 dark:text-gray-400">

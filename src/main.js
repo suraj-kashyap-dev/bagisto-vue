@@ -32,6 +32,7 @@ app.use(pinia);
 pinia.use(({ store }) => {
   store.$axios = app.config.globalProperties.$axios;
   store.$router = markRaw(router);
+  store.$app = app;
 });
 
 // Use the router and other global plugins

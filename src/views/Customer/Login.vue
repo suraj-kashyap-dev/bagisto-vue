@@ -53,6 +53,7 @@ const userStore = useAuthStore();
                   id="email"
                   rules="required"
                   placeholder="Enter your email address"
+                  value="admin@gmail.com"
                 />
 
                 <v-error control-name="email" />
@@ -67,6 +68,7 @@ const userStore = useAuthStore();
                   id="password"
                   rules="required"
                   placeholder="••••••••"
+                  value="admin123"
                 />
 
                 <v-error control-name="password" />
@@ -96,7 +98,13 @@ const userStore = useAuthStore();
               </div>
 
               <!-- login Button -->
-              <v-button type="submit"> Login </v-button>
+              <v-button 
+                ref="signInButton"
+                type="submit"
+                class="w-full"
+              > 
+                Login 
+              </v-button>
 
               <!-- Sign in button link -->
               <p class="text-sm font-light text-gray-500 dark:text-gray-400">

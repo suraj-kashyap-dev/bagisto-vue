@@ -90,7 +90,7 @@
 
 <script setup>
 import { useCategoriesStore } from "@/stores/modules/categories";
-import { ref, computed } from 'vue';
+import { ref, computed } from "vue";
 
 const offset = ref(323);
 const swiperContainer = ref(null);

@@ -3,7 +3,7 @@ defineProps({
   controlName: {
     type: String,
     required: true,
-  }
+  },
 });
 </script>
 
@@ -12,8 +12,6 @@ defineProps({
     <p
       :class="'text-red-500 text-xs italic ' + $attrs.class"
       v-text="message"
-    >
-    </p>
+    ></p>
   </vee-error-message>
 </template>
-

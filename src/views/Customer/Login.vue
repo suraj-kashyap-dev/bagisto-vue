@@ -96,12 +96,8 @@ const userStore = useAuthStore();
               </div>
 
               <!-- login Button -->
-              <v-button 
-                ref="signInButton"
-                type="submit"
-                class="w-full"
-              > 
-                Login 
+              <v-button ref="signInButton" type="submit" class="w-full">
+                Login
               </v-button>
 
               <!-- Sign in button link -->

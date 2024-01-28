@@ -1,3 +1,20 @@
+<script setup>
+defineProps({
+  type: {
+    type: String,
+    default: "text",
+  },
+  name: {
+    type: String,
+    default: "demo",
+  },
+  placeholder: {
+    type: String,
+    default: "Enter text here",
+  },
+});
+</script>
+
 <template>
   <vee-field
     v-if="
@@ -21,22 +38,3 @@
     />
   </vee-field>
 </template>
-
-<script>
-export default {
-  props: {
-    type: {
-      type: String,
-      default: "text",
-    },
-    name: {
-      type: String,
-      default: "demo",
-    },
-    placeholder: {
-      type: String,
-      default: "Enter text here",
-    },
-  },
-};
-</script>

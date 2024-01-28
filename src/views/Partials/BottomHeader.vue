@@ -41,28 +41,26 @@ onMounted(() => {
           class="flex items-center pr-4 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
           v-if="authStore.isAuthenticated"
         >
-          <a href="/" aria-label="Cart">
-           
-          </a>
+          <a href="/" aria-label="Cart"> </a>
 
           <!-- drawer init and toggle -->
           <div class="text-center">
-              <svg
-                class="w-6 h-6 text-gray-800 dark:text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                data-drawer-target="cart-drawer"
-                data-drawer-show="cart-drawer"
-                aria-controls="cart-drawer"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M4 4c0-.6.4-1 1-1h1.5c.5 0 .9.3 1 .8L7.9 6H19a1 1 0 0 1 1 1.2l-1.3 6a1 1 0 0 1-1 .8h-8l.2 1H17a3 3 0 1 1-2.8 2h-2.4a3 3 0 1 1-4-1.8L5.7 5H5a1 1 0 0 1-1-1Z"
-                  clip-rule="evenodd"
-                />
-              </svg>
+            <svg
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              data-drawer-target="cart-drawer"
+              data-drawer-show="cart-drawer"
+              aria-controls="cart-drawer"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4 4c0-.6.4-1 1-1h1.5c.5 0 .9.3 1 .8L7.9 6H19a1 1 0 0 1 1 1.2l-1.3 6a1 1 0 0 1-1 .8h-8l.2 1H17a3 3 0 1 1-2.8 2h-2.4a3 3 0 1 1-4-1.8L5.7 5H5a1 1 0 0 1-1-1Z"
+                clip-rule="evenodd"
+              />
+            </svg>
           </div>
 
           <!-- drawer component -->

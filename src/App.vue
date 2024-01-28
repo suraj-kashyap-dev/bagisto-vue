@@ -29,10 +29,10 @@ export default {
   },
   watch: {
     $route: {
-        immediate: true,
-        handler(to, from) {
-          document.title = `${to.meta.title} | Bagisto` || 'Some Default Title';
-        }
+      immediate: true,
+      handler(to, from) {
+        document.title = `${to.meta.title} | Bagisto` || "Some Default Title";
+      },
     },
   },
   created() {

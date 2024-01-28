@@ -13,7 +13,7 @@ const router = createRouter({
       name: "home",
       component: Home,
       meta: {
-        title: 'Home',
+        title: "Home",
         progress: {
           func: [
             { call: "color", modifier: "temp", argument: "#ffb000" },
@@ -33,7 +33,7 @@ const router = createRouter({
       name: "register",
       component: Register,
       meta: {
-        title: 'Register',
+        title: "Register",
         progress: {
           func: [
             { call: "color", modifier: "temp", argument: "#ffb000" },
@@ -53,7 +53,7 @@ const router = createRouter({
       name: "login",
       component: Login,
       meta: {
-        title: 'Login',
+        title: "Login",
         progress: {
           func: [
             { call: "color", modifier: "temp", argument: "#ffb000" },
@@ -73,7 +73,7 @@ const router = createRouter({
       name: "category.details",
       component: CategoryView,
       meta: {
-        title: 'Category Details',
+        title: "Category Details",
         progress: {
           func: [
             { call: "color", modifier: "temp", argument: "#ffb000" },
